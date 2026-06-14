@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>now playing...</title>
+    </head>
+    <body>
+        <div class="titlebar">
+            <button id="closeButton">✕</button>
+        </div>
+        <div id="np-container" class="np-container bitcount-font">
+            <div class="now-playing-text" id="nowPlayingText"></div>
+            <div class="song-text hide-scrollbar" id="songText">
+                <span class="song-artist">Artist :</span>
+                <!-- <span class="song-title">
+          I Am S/H(im)e[r] As You Am S/H(im)e[r] As You Are Me and We Am I and I
+          Are All Our Together: Our Collective Consciousness’ Psychogenic Fugue
+        </span> -->
+                <span class="song-title"> Song Title </span>
+            </div>
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>

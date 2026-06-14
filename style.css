@@ -1,0 +1,151 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+    margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    /* 4. Increase line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+body {
+    background: #96bbb3;
+}
+
+.np-container {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    background: #96bbb3;
+    color: #203139;
+}
+
+.now-playing-text {
+    width: fit-content;
+    text-wrap: nowrap;
+    margin-right: 25px;
+    margin-left: 5px;
+}
+
+.song-text {
+    overflow-x: scroll;
+    text-wrap: nowrap;
+}
+
+/* <weight>: Use a value from 100 to 900 */
+
+.bitcount-font {
+    font-family: "Bitcount Grid Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+}
+
+.hide-scrollbar {
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+
+    /* Hide scrollbar for IE and Legacy Edge */
+    -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.titlebar {
+    height: 15px;
+    display: flex;
+    justify-content: flex-start;
+
+    /* Makes the bar draggable */
+    -webkit-app-region: drag;
+    background: #788f8a;
+}
+
+#closeButton {
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 8px;
+}
