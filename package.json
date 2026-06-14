@@ -1,29 +1,42 @@
 {
-  "name": "now-playing",
-  "version": "1.0.0",
-  "description": "Shows what you are playing in Spotify in a small window.",
-  "license": "ISC",
-  "author": "Jimmeh",
-  "type": "commonjs",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
-  },
-  "dependencies": {
-    "debug": "^4.4.3",
-    "dotenv": "^17.4.2",
-    "electron-store": "^8.2.0",
-    "env-paths": "^3.0.0",
-    "graceful-fs": "^4.2.11",
-    "ms": "^2.1.3",
-    "progress": "^2.0.3",
-    "semver": "^7.8.4",
-    "sumchecker": "^3.0.1",
-    "undici": "^7.27.2",
-    "undici-types": "^7.18.2"
-  },
-  "devDependencies": {
-    "electron": "^42.4.0"
-  }
+    "name": "now-playing",
+    "version": "1.0.0",
+    "description": "Shows what you are playing in Spotify in a small window.",
+    "license": "ISC",
+    "author": "Jimmeh",
+    "type": "commonjs",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron .",
+        "dist": "electron-builder"
+    },
+    "build": {
+        "appId": "com.yourname.now-playing",
+        "productName": "now playing",
+        "icon": "assets/icon",
+        "win": {
+            "target": "nsis"
+        },
+        "files": [
+            "**/*",
+            "!.env"
+        ]
+    },
+    "dependencies": {
+        "debug": "^4.4.3",
+        "dotenv": "^17.4.2",
+        "electron-store": "^8.2.0",
+        "env-paths": "^3.0.0",
+        "graceful-fs": "^4.2.11",
+        "ms": "^2.1.3",
+        "progress": "^2.0.3",
+        "semver": "^7.8.4",
+        "sumchecker": "^3.0.1",
+        "undici": "^7.27.2",
+        "undici-types": "^7.18.2"
+    },
+    "devDependencies": {
+        "electron": "^42.4.0"
+    }
 }
