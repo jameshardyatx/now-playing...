@@ -153,12 +153,15 @@ body {
 .connect-btn {
     background: transparent;
     border: none;
-    padding: 0;
+    padding: 6px 12px 12px 12px;
     margin: 0;
     color: inherit;
     cursor: pointer;
     text-align: inherit;
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    align-self: flex-start;
+    justify-self: baseline;
 }
 
 .play-pause {
