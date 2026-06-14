@@ -83,7 +83,7 @@ body {
     height: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: nowrap;
     background: #96bbb3;
     color: #203139;
@@ -148,4 +148,25 @@ body {
     border: none;
     background: transparent;
     font-size: 8px;
+}
+
+.connect-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    cursor: pointer;
+    text-align: inherit;
+    font-size: 12px;
+}
+
+.play-pause {
+    width: 12px;
+    height: 12px;
+    filter: brightness(0) saturate(100%) invert(12%) sepia(13%) saturate(1812%) hue-rotate(154deg) brightness(94%) contrast(84%);
+    margin-left: 1ch;
+    margin-right: 1ch;
+    margin-bottom: .5ch;
+    align-self: center;
 }

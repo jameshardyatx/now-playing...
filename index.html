@@ -15,19 +15,63 @@
     <body>
         <div class="titlebar">
             <button id="closeButton">✕</button>
+            <div id="auth-section">
+                <button id="connect-btn" class="connect-btn bitcount-font">login</button>
+            </div>
+            <!-- <div id="player" style="display: none">
+                <img id="album-art" width="40" height="40" />
+                <span id="track"></span>
+            </div> -->
         </div>
         <div id="np-container" class="np-container bitcount-font">
+            <!-- "now playing..."" is inserted here via js -->
             <div class="now-playing-text" id="nowPlayingText"></div>
+            <img class="play-pause" id="playPause" src="empty-state.svg">
             <div class="song-text hide-scrollbar" id="songText">
-                <span class="song-artist">Artist :</span>
+                <span class="song-artist" id="songArtist"></span>
+                <span>:</span>
                 <!-- <span class="song-title">
           I Am S/H(im)e[r] As You Am S/H(im)e[r] As You Are Me and We Am I and I
           Are All Our Together: Our Collective Consciousness’ Psychogenic Fugue
         </span> -->
-                <span class="song-title"> Song Title </span>
+                <span class="song-title" id="songTitle"></span>
             </div>
         </div>
 
         <script src="./script.js"></script>
+        <script>
+            window.spotify.getAuthStatus().then((isAuthed) => {
+                if (isAuthed) showPlayer();
+            });
+
+            document
+                .getElementById("connect-btn")
+                .addEventListener("click", () => {
+                    window.spotify.startAuth();
+                });
+
+            window.spotify.onNowPlaying((data) => {
+                if (!data) {
+                    document.getElementById("songTitle").textContent =
+                        "8 8 8 8 8 8 8";
+                    document.getElementById("songArtist") = "8 8 8 8 8 8 8"
+                    return;
+                }
+                showPlayer();
+                const { item, is_playing } = data;
+                // document.getElementById("track").textContent =
+                //     `${is_playing ? "▶" : "⏸"} ${item.name} — ${item.artists.map((a) => a.name).join(", ")}`;
+                document.getElementById("songArtist").textContent = item.artists.map((a) => a.name).join(", ");
+                document.getElementById("songTitle").textContent = item.name;
+                document.getElementById("playPause").src = is_playing ? "play-icon.svg" : "pause-icon.svg";
+                // document.getElementById("album-art").src =
+                //     item.album.images[0]?.url ?? "";
+            });
+
+            function showPlayer() {
+                document.getElementById("auth-section").style.display = "none";
+                // document.getElementById("player").style.display = "block";
+            }
+        </script>
     </body>
 </html>
