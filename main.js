@@ -4,7 +4,8 @@ const http = require("http");
 const crypto = require("crypto");
 const Store = require("electron-store");
 
-require("dotenv").config({ path: path.join(__dirname, ".env") });
+// require("dotenv").config({ path: path.join(__dirname, ".env") });
+require('dotenv').config({ path: path.join(path.dirname(app.getPath('exe')), '.env') });
 
 const store = new Store();
 

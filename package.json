@@ -37,6 +37,7 @@
         "undici-types": "^7.18.2"
     },
     "devDependencies": {
-        "electron": "^42.4.0"
+        "electron": "^42.4.0",
+        "electron-builder": "^26.15.3"
     }
 }
